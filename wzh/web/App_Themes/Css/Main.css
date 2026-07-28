@@ -1,4 +1,6 @@
-﻿@font-face {
+﻿@import url(./Header.css);
+
+@font-face {
     /*font-family: JetBrainsMono-Regular;
     src: url('./Font/JetBrainsMono-Regular.ttf') format('embedded-opentype'), url('./Font/JetBrainsMono-Regular.ttf') format('woff'), url(./Font/JetBrainsMono-Regular.woff2);*/
     font-family: JetBrainsMono-ExtraBold;
@@ -23,16 +25,6 @@ body {
 
 form {
     height: 100%;
-}
-
-header {
-    width: 100%;
-    min-width: 800px;
-    height: 60px;
-    background-color: #b4bece;
-    color: #333;
-    position: fixed;
-    z-index: 999;
 }
 
 article {

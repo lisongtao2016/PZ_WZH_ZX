@@ -1,77 +1,206 @@
-﻿.top_button_panel {
-    min-width: 800px;
+﻿/* ========== 上方三排控件 table 布局 ========== */
+.top_table {
+    width: 100%;
+    border-collapse: collapse;
     background-color: #efefef;
+    border-radius: 8px;
+    margin-bottom: 8px;
 }
 
-    /*.top_button_panel input[type='text'] {
-        width: 320px;
-        height: 30px;
-        text-align: center;
-    }*/
+.top_table td {
+    padding: 3px 3px;
+    vertical-align: middle;
+}
 
-    .top_button_panel input[type='button'], .top_button_panel input[type='submit'] {
-        margin: 8px 4px 8px 4px;
-        padding: 2px 4px 2px 4px;
-        text-align: center;
-    }
+/* 输入框 / 下拉框 */
+.top_tb {
+    height: 60px !important;
+    min-height: 60px !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    border: 1px solid #bbb !important;
+    padding: 0 8px !important;
+    font-size: 26px !important;
+    width: 100%;
+    vertical-align: middle;
+}
 
-    .edit_link {
-        color: blue;
-        text-decoration: underline;
-        cursor:pointer;
-    }
+/* 正常按钮 */
+.top_btn {
+    height: 60px;
+    width: 100%;
+    padding: 0 6px;
+    box-sizing: border-box;
+    line-height: 58px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: #fff;
+    color: #222;
+    border-left: 4px solid #4a90d9;
+}
 
+.top_btn:hover {
+    background: #f0f4ff;
+    border-color: #4a90d9;
+    box-shadow: 0 2px 8px rgba(74, 144, 217, 0.20);
+}
 
+.top_btn:active {
+    transform: translateY(0);
+}
 
+/* 小按钮（生产实际/不良一览） */
+.top_btn_small {
+    height: 60px;
+    width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+    line-height: 58px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: #fff;
+    color: #222;
+    border-left: 4px solid #999;
+}
 
+.top_btn_small:hover {
+    background: #f5f5f5;
+    border-color: #999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* 禁用状态 */
+.top_btn:disabled,
+.top_btn_small:disabled,
+.top_btn[disabled],
+.top_btn_small[disabled] {
+    background: #f0f0f0 !important;
+    color: #ccc !important;
+    border: 1px solid #e0e0e0 !important;
+    border-left: 4px solid #e0e0e0 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.edit_link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ========== gvtitle ========== */
+.gvtitle {
+    border-collapse: collapse;
+}
 
 .gvtitle td {
-    border-left:solid 1px #000;
-    border-top:solid 1px #000;
-    border-bottom:solid 1px #000;
-    font-weight:bold;
-    text-align:center;
+    border-left: 1px solid #c8e6c9;
+    border-top: 1px solid #c8e6c9;
+    border-bottom: 1px solid #c8e6c9;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    padding: 2px 0;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
-
+.gvtitle tr td:last-child {
+    border-right: 1px solid #d0d0d0;
+}
 
 .gv td {
-    /*line-height: 26px;*/
+    font-size: 13px;
+    font-family: "Segoe UI", "微软雅黑", "Meiryo", sans-serif;
     padding-bottom: 2px;
     padding-top: 2px;
 }
 
-.gv td:nth-child(1) {
-    width:160px;
-}
-    .gv td:nth-child(2) {
-        width: 80px;
-    }
-    .gv td:nth-child(3) {
-        width: 60px;
-    }
+.gv td:nth-child(1) { width:160px; }
+.gv td:nth-child(2) { width: 80px; }
+.gv td:nth-child(3) { width: 60px; }
+.gv td:nth-child(4) { width: 120px; }
+.gv td:nth-child(5) { width: 140px; }
+.gv td:nth-child(6) { width: 100px; }
+.gv td:nth-child(7) { width: 50px; }
 
-    .gv td:nth-child(4) {
-        width: 120px;
-    }
-    .gv td:nth-child(5) {
-        width: 140px;
-    }
-    .gv td:nth-child(6) {
-        width: 100px;
-    }
-    .gv td:nth-child(7) {
-        width: 50px;
-    }
-.test{
-    background-color:#edeb8c
-}
+.test { background-color:#edeb8c; }
 
-.PGvZen{
+.PGvZen {
     overflow:auto;
     background-color:#eba8a8;
     position:absolute;
     left:10px;
     top:10px;
     border:5px solid blue;
+}
+
+/* 本画面隐藏标题栏左侧"防漏检 系统" */
+header > div:first-child::before {
+    content: none !important;
+}
+
+/* 左上角部品选择面板 */
+.top-left-panel {
+    position: absolute;
+    z-index: 100000;
+    top: 8px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.top-left-panel a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a237e;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-right: 4px;
+}
+
+.top-left-panel a:hover {
+    text-decoration: underline;
+    color: #283593;
+}
+
+.top-left-panel input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #00838f;
+}
+
+.top-left-panel label,
+.top-left-panel span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
 }

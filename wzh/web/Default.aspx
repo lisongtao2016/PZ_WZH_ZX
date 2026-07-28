@@ -25,31 +25,32 @@
     <script type="text/javascript" src="./Js/Main.js?randomId=<%=PageCom.GetYmdhmsf()%>"></script>
 
     <%--自分頁--%>
+    <link rel="stylesheet" href="./Default.css" />
     <script type="text/javascript" src="./Default.js?randomId=<%=PageCom.GetYmdhmsf()%>"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <uc1:Header runat="server" ID="UserHeader" title="登录" />
         <article>
+            <div class="login-card">
+                <div class="login-title">用户登录</div>
 
-            <div style="overflow: auto;">
-
-                <div style="width: 400px; height: 250px; background-color: #fff; margin: 100px auto 0 auto; padding: 50px;">
-
+                <div class="input-group">
                     <%--   <asp:TextBox ID="tbxUserCd" runat="server" CssClass="jqIptChk" chkFmt="must english_number" chkName="用户CD" MaxLength="20" Style="margin-top: 0px; width: 380px; ime-mode: disabled" placeholder="ユーザーコード" title="用户CD（半角英数字）">  </asp:TextBox>
                     --%>
                     <cc2:Ilike_TextBox ID="tbxUserCd" runat="server" InputName="用户CD" InputType="EnglishNumber" MustInputType="IsTrue"
-                        MaxLength="20" Style="margin-top: 0px; width: 380px; ime-mode: disabled" placeholder="用户CD" title="用户CD（半角英数字）" Text=""></cc2:Ilike_TextBox>
-                    <a style="position: static; margin-left: -40px; font-size: 22px; vertical-align: middle"></a>
+                        MaxLength="20" Style="ime-mode: disabled; width:100%;" placeholder="用户CD" title="用户CD（半角英数字）" Text=""></cc2:Ilike_TextBox>
+                </div>
 
-
+                <div class="input-group">
                     <%--<asp:TextBox ID="tbxPassword" runat="server" CssClass="jqIptChk" chkFmt="must english_number" chkName="密码" MaxLength="20" Style="margin-top: 40px; width: 380px;" placeholder="パスワード" TextMode="Password" title="密码（半角英数字）"></asp:TextBox>--%>
                     <cc2:Ilike_TextBox ID="tbxPassword" runat="server" InputName="密码" InputType="EnglishNumber" MustInputType="IsTrue"
-                        MaxLength="20" Style="margin-top: 40px; width: 380px;" placeholder="密码" TextMode="Password" title="密码（半角英数字）" Text="1"></cc2:Ilike_TextBox>
+                        MaxLength="20" Style="width:100%;" placeholder="密码" TextMode="Password" title="密码（半角英数字）" Text="1"></cc2:Ilike_TextBox>
+                </div>
 
-                    <a style="position: static; margin-left: -40px; font-size: 22px; vertical-align: middle"></a>
-                    <input id="Reset1" type="reset" value="Reset" class="button" style="margin-top: 40px; width: 160px; float: left;" />
-                    <asp:Button ID="btnLogin" runat="server" Text="登录" CssClass="button" Style="margin-top: 40px; width: 160px; float: right;" OnClientClick="return CheckAllInput();" />
+                <div class="btn-row">
+                    <input id="Reset1" type="reset" value="Reset" />
+                    <asp:Button ID="btnLogin" runat="server" Text="登录" OnClientClick="return CheckAllInput();" />
                 </div>
             </div>
         </article>

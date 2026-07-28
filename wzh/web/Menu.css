@@ -1,35 +1,271 @@
-﻿.menu_button {
-    margin: 10px auto 10px auto;
-    width: 320px;
+﻿/* ========== 全局 ========== */
+body {
+    margin: 0;
+    padding: 100px 0 0 0;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: "Segoe UI", "微软雅黑", "Meiryo", sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.light_yellow{
-    background-color:#f6f0cf;
+
+/* ========== 主容器卡片 ========== */
+article {
+    background: #ffffff !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    margin: 0 auto 24px auto !important;
+    padding: 24px 24px 30px 24px;
+    max-width: 960px;
+    overflow: hidden;
 }
 
-.light_blue{
-    background-color:#bddef5 ;
+/* ========== 左右栏调整 ========== */
+.col-left,
+.col-right {
+    float: left;
+    min-height: 480px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-.light_green{
-    background-color:#b6ff00  ;
+.col-left {
+    width: 50%;
+    padding-right: 6px;
 }
 
-.NavajoWhite{
-    background-color:NavajoWhite ;
+.col-right {
+    width: 50%;
+    padding-left: 6px;
 }
 
-.Orange{
-    background-color:Orange ;
+/* clearfix for row */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-hr{
-    border:1px thin #ccc;
-       
+/* ========== 区块标题 ========== */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: 2px;
+    margin: 18px 0 8px 0;
+    padding-bottom: 6px;
+    position: relative;
 }
-.new_menu_button_small{
 
-    font-size:20px;
-
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a90d9, #7b68ee);
+    border-radius: 2px;
+    margin: 6px auto 0 auto;
 }
- 
+
+/* ========== 分隔线 ========== */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ccc, transparent);
+    margin: 8px 0 14px 0;
+}
+
+/* ========== 按钮通用 ========== */
+.menu_button,
+.new_menu_button_small,
+input.menu_button,
+input.new_menu_button_small {
+    display: inline-block;
+    width: 300px;
+    margin: 4px auto;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+.menu_button:hover,
+.new_menu_button_small:hover,
+input.menu_button:hover,
+input.new_menu_button_small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    filter: brightness(1.05);
+}
+
+.menu_button:active,
+.new_menu_button_small:active,
+input.menu_button:active,
+input.new_menu_button_small:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+}
+
+/* ========== 颜色主题 ========== */
+.light_yellow {
+    background-color: #f6f0cf;
+    border-left: 4px solid #d4b872;
+}
+
+.light_blue {
+    background-color: #bddef5;
+    border-left: 4px solid #5b9bd5;
+}
+
+.light_green {
+    background-color: #d2f0b0;
+    border-left: 4px solid #7fba3e;
+    color: #2d5a0e;
+}
+
+.NavajoWhite {
+    background-color: #ffdead;
+    border-left: 4px solid #d2a043;
+}
+
+.Orange {
+    background-color: #ffc55a;
+    border-left: 4px solid #e8961e;
+    color: #5a3e00;
+}
+
+/* ========== 按钮行（新/旧按钮并排） ========== */
+.btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 4px 0;
+    flex-wrap: wrap;
+}
+
+.btn-row .menu_button,
+.btn-row .menu_button_new {
+    width: 200px;
+    min-width: 120px;
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+/* NEW 按钮（等大橙色） */
+.menu_button_new {
+    display: inline-block;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b35, #e65100);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(230, 81, 0, 0.30);
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+.menu_button_new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.45);
+    filter: brightness(1.10);
+}
+
+.menu_button_new:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(230, 81, 0, 0.30);
+}
+
+/* ========== 特殊按钮 ========== */
+.new_menu_button_small {
+    width: 280px;
+    font-size: 15px;
+    background: linear-gradient(135deg, #fff5e6, #ffe0b2);
+    border-left: 4px solid #f57c00;
+    color: #6d3a00;
+}
+
+/* ========== 子区块（"相同CD"边框区） ========== */
+.sub-box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px 6px;
+    margin: 14px 0;
+    background: #fafbfc;
+}
+
+.sub-box a.menu_button {
+    width: 260px;
+    font-size: 16px;
+}
+
+/* ========== 链接按钮（a标签） ========== */
+a.menu_button {
+    padding: 10px 12px;
+    box-sizing: border-box;
+}
+
+/* ========== 返回按钮特殊样式 ========== */
+#btnBack {
+    margin-top: 16px;
+    width: 180px;
+    font-size: 15px;
+    background-color: #f0f0f0;
+    border-left: 4px solid #999;
+    color: #555;
+}
+
+#btnBack:hover {
+    background-color: #e0e0e0;
+}
+
+/* ========== 响应式 - 窄屏 ========== */
+@media (max-width: 780px) {
+    .col-left,
+    .col-right {
+        width: 100%;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        float: none;
+        min-height: auto;
+    }
+
+    article {
+        margin: 12px !important;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .menu_button,
+    .new_menu_button_small,
+    input.menu_button,
+    input.new_menu_button_small {
+        width: 88%;
+        max-width: 340px;
+        font-size: 15px;
+    }
+
+    .sub-box a.menu_button {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    #btnBack {
+        width: 140px;
+    }
+}

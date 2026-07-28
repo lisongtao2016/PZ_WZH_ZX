@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="Header.ascx.vb" Inherits="UserControls_Header" %>
 
+<link rel="stylesheet" href="./App_Themes/Css/Header.css" />
+
         <div id="dialog" title="Information" style="display: none; z-index: 41111;">
             <p id="dialogMsg"></p>
         </div>

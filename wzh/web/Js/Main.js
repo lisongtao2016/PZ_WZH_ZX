@@ -163,8 +163,10 @@ function alert2(msg, okfnc, errType,text_color) {
 
     $("#dialog").dialog({
         dialogClass: "no-close",
-        width: $(window).width() * 0.6,
-        height: $(window).height() * 0.6,
+        width: "auto",
+        height: "auto",
+        minWidth: 300,
+        maxWidth: Math.min(500, $(window).width() * 0.8),
         buttons: [
           {
               text: "OK",
