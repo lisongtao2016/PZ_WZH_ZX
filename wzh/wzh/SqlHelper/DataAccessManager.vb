@@ -17,6 +17,10 @@ Public NotInheritable Class DataAccessManager
     ''' <remarks></remarks>
     Private Shared SqlConnStr As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
     Private Shared SqlTCMConnStr As String = System.Configuration.ConfigurationManager.ConnectionStrings("TCMConstr").ConnectionString
+    Private Shared connectionPlan As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionPlan").ConnectionString
+
+
+
     'Private Shared SqlConnStrOt2414 As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionStringOt2414").ConnectionString
     'Private Shared SqlConnStrN9EMD99 As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionStringN9EMD99").ConnectionString
     'Private Shared SqlConnStrCmsdn As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionStringCmsdn").ConnectionString
@@ -31,6 +35,22 @@ Public NotInheritable Class DataAccessManager
 
         Get
             Return SqlConnStr
+            'If Dns.GetHostName().ToLower = ("ot5600").ToLower Then
+            '    Return SqlConnStr
+            'ElseIf Dns.GetHostName().ToLower = ("DESKTOP-N9EMD99").ToLower Then
+            '    Return SqlConnStrN9EMD99
+            'ElseIf Dns.GetHostName().ToLower = ("172_30_0_3").ToLower Then
+            '    Return SqlConnStrCmsdn
+            'Else
+            '    Return SqlConnStr
+            'End If
+        End Get
+    End Property
+
+    Public Shared ReadOnly Property ConnPlan() As String
+
+        Get
+            Return connectionPlan
             'If Dns.GetHostName().ToLower = ("ot5600").ToLower Then
             '    Return SqlConnStr
             'ElseIf Dns.GetHostName().ToLower = ("DESKTOP-N9EMD99").ToLower Then

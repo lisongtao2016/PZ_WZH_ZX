@@ -1,4 +1,4 @@
-<%@ Page Language="VB" AutoEventWireup="false" CodeFile="CheckApi_test.aspx.vb" Inherits="CheckApi_test" %>
+ï»¿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="CheckApi_test.aspx.vb" Inherits="CheckApi_test" %>
 
 <!DOCTYPE html>
 
@@ -63,7 +63,7 @@
             <div class="url-info">
                 WebService URL: <span id="wsUrl">CheckApi.asmx</span> / GetCheckResult
             </div>
-            <label for="txtNos">×÷·¬NO (comma separated):</label>
+            <label for="txtNos">ï¿½ï¿½ï¿½ï¿½NO (comma separated):</label>
             <div class="input-area">
                 <textarea id="txtNos" placeholder="e.g. 9006995645,9006979524">9006995645,9006979524</textarea>
             </div>

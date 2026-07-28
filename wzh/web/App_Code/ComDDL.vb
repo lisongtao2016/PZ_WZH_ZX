@@ -467,6 +467,84 @@ Public Class ComDDL
 
 
 
+    Public Shared Function Se1_15DaysPlan(ByVal startDate As String) As DataTable
+        'SQLコメント
+        '--**テーブル：图片MS : m_picture
+        Dim sb As New StringBuilder
+        'SQL文
+        sb.AppendLine("SELECT")
+        sb.AppendLine("    PlanDate,")
+        sb.AppendLine("    b2bOderNo,")
+        sb.AppendLine("    b2bIndexNo,")
+        sb.AppendLine("    DealerAbbreviation,")
+        sb.AppendLine("    CD_Dealer,")
+        sb.AppendLine("    specialBookNo,")
+        sb.AppendLine("    DestinationCode,")
+        sb.AppendLine("    BillNo,")
+        sb.AppendLine("    REPLACE(ProductCode, '-', '') AS ProductCode,")
+        sb.AppendLine("    insertdate,")
+        sb.AppendLine("    ZuoFan,")
+        sb.AppendLine("    WorkLineCode")
+        sb.AppendLine("FROM [tcm_bianplan]")
+        sb.AppendLine("WHERE 1=1")
+        'sb.AppendLine("AND insertdate>='" & DateAdd(DateInterval.Day, -15, Now).ToString & "'")
+
+        sb.AppendLine("AND insertdate>='" & startDate & "'")
+
+        'バラメタ格納
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim dsInfo As New Data.DataSet
+        FillDataset(DataAccessManager.ConnStr, CommandType.Text, sb.ToString(), dsInfo, "Se1_15DaysPlan", paramList.ToArray)
+
+        Return dsInfo.Tables(0)
+
+    End Function
 
 
+    Public Shared Function Se1_PlanLastUpdateDate() As DataTable
+
+        Dim sb As New StringBuilder
+        sb.AppendLine("SELECT ")
+        sb.AppendLine("    OBJECT_NAME(object_id) AS [TableName],")
+        sb.AppendLine("    MAX(last_user_update)  AS [LastUpdatedTime]")
+        sb.AppendLine("FROM sys.dm_db_index_usage_stats")
+        sb.AppendLine("WHERE database_id = DB_ID() ")
+        sb.AppendLine("  AND object_id = OBJECT_ID('T_BianPlan')")
+        sb.AppendLine("GROUP BY object_id")
+
+        'バラメタ格納
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim dsInfo As New Data.DataSet
+        FillDataset(DataAccessManager.ConnPlan, CommandType.Text, sb.ToString(), dsInfo, "Se1_PlanLastUpdateDate", paramList.ToArray)
+        Return dsInfo.Tables(0)
+
+    End Function
+
+
+
+
+    Public Shared Function Se1_IsPlanNeedUpd() As Boolean
+
+        Dim dt As DataTable = Se1_PlanLastUpdateDate()
+        Dim sb As New StringBuilder
+        sb.AppendLine("SELECT *")
+        sb.AppendLine("FROM m_plan_upd_kanri")
+        sb.AppendLine("WHERE TableName = 'T_BianPlan' ")
+        'バラメタ格納
+        Dim paramList As New List(Of SqlParameter)
+        Dim dsInfo As New Data.DataSet
+        FillDataset(DataAccessManager.ConnStr, CommandType.Text, sb.ToString(), dsInfo, "Se1_IsPlanNeedUpd", paramList.ToArray)
+        Dim dt2 As DataTable = dsInfo.Tables(0)
+        If dt2.Rows.Count = 0 Then
+            Return True
+        End If
+        If (Convert.ToDateTime(dt.Rows(0).Item("LastUpdatedTime")).ToString("yyyyMMddHHmmss") = Convert.ToDateTime(dt2.Rows(0).Item("LastUpdatedTime")).ToString("yyyyMMddHHmmss")) Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
 End Class
