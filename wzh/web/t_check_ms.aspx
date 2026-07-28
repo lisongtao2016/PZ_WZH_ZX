@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.css" />
 
     <%--共通--%>
+    <link href="./App_Themes/Css/Header.css?randomId=<%=PageCom.GetYmdhmsf()%>" rel="stylesheet" type="text/css" />
     <%-- <link href="./App_Themes/Css/Main.css?randomId=<%=PageCom.GetYmdhmsf()%>" rel="stylesheet" type="text/css" />--%>
     <script type="text/javascript" src="./Js/Main.js?randomId=<%=PageCom.GetYmdhmsf()%>"></script>
 
@@ -202,7 +203,7 @@
     <form id="form1" runat="server">
 
         <article>
-            <div class="top_button_panel" style="width: 100%; height: 50px; position: relative; margin-bottom: 50px; font-size: 20px;">
+            <div class="top_button_panel" style="width: 100%; position: relative; margin-bottom: 50px; font-size: 20px; height: auto; min-height: 50px;">
 
                 <div class="divBanner" style="">
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/UserIcon.png" Style="height: 26px; width: 26px;" />
@@ -218,16 +219,13 @@
 
                 </div>
 
-                <div style="height: 50px; float: left; padding-left: 5px; width: 790px;">
-
+                <div style="height: 50px; float: left; padding-left: 5px; width: 790px; display: flex; align-items: center;">
 
                     <asp:Label ID="tbxCd" runat="server" Text="tbxCd"></asp:Label>
                     <asp:Label ID="tbxNo" runat="server" Text="tbxCd"></asp:Label>
-                    <asp:Label ID="tbxCk_id" runat="server" Text="tbxCd" Style="color: #727610; font-size: 12px;"></asp:Label>
+                    <asp:Label ID="tbxCk_id" runat="server" Text="tbxCd" Style="color: #727610; font-size: 9px;"></asp:Label>
 
-                    <%--<asp:LinkButton ID="lbSCX" runat="server">查看生产性</asp:LinkButton>--%>
-                    <hr />
-                    <div id="SumRlt" style="text-align: right; width: 700px;">
+                    <div id="SumRlt" style="margin-left: auto; text-align: right;">
                     </div>
 
                 </div>

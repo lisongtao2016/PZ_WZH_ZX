@@ -29,37 +29,39 @@
     <%--cd	no CHADZDH1CABXXXX	9013568433--%>
     <form id="form1" runat="server">
 
-        <div style="position: absolute; z-index: 100000; top: 10px; left: 10px;">
+        <%-- 変更1: 左上角部品选择面板 --%>
+        <div class="top-left-panel">
             <asp:LinkButton ID="lbSCX" runat="server">查看生产性</asp:LinkButton>
             <asp:CheckBox ID="cb1" runat="server" Text="1部" Checked="true" />
             <asp:CheckBox ID="cb2" runat="server" Text="2部" Checked="true" />
             <asp:CheckBox ID="cb3" runat="server" Text="3部" Checked="true" />
             <asp:CheckBox ID="cb4" runat="server" Text="4部" Checked="true" />
-
+            <%-- 変更2: lblGT 移到 4部 右侧 --%>
+            <asp:Label ID="lblGT" runat="server" Text="" style="margin-left:8px;font-weight:700;color:#333;font-size:16px;"></asp:Label>
         </div>
-        <uc1:Header runat="server" ID="UserHeader" title="检查一览" />
+        <%-- 変更3: UserHeader 标题清空 --%>
+        <uc1:Header runat="server" ID="UserHeader" title="" />
 
 
         <article>
+            <%-- 変更4: 第一行 移除 float:right div，改用 class --%>
             <div class="top_button_panel">
                 <asp:TextBox ID="tbxTpNo" CssClass="tp_barcode" runat="server" placeholder="托盘CD" Text="" Font-Size="40px" ForeColor="blue" Width="180px" Height="40px"></asp:TextBox>
                 <asp:Button ID="btnTpChkList" runat="server" Text="托盘检查一览" Width="210px" />
                 <input type="button" id="btnClearTp" value="清空" />
-                <div style="float: right">
-                     <input type="button" id="btnScsj" value="生产实际" />
-                    <input type="button" id="btnBuliang" value="不良一览" />
-                </div>
+                <input type="button" id="btnScsj" class="btn_small" value="生产实际" />
+                <input type="button" id="btnBuliang" class="btn_small" value="不良一览" />
             </div>
 
+            <%-- 変更5: 第二行 tbxCd / tbxNo 强制高度 60px + 删除 lblGT --%>
             <div class="top_button_panel">
 
                 <%-- CHADDLWKKABTAXX 9006160969 --%>
                 <%-- CHFDEDMAAAAXXJX 9006331505 --%>
                 <%--CHADDLW3A1BTAXX 9006160965--%>
-                <asp:TextBox ID="tbxCd" runat="server" placeholder="商品CD" Text="" Width="300" Font-Size="26px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="tbxCd" runat="server" placeholder="商品CD" Text="" Width="300" Font-Size="26px" AutoCompleteType="Disabled" style="height:50px !important"></asp:TextBox>
 
-
-                <asp:TextBox ID="tbxNo" runat="server" placeholder="作番" Text="" Width="160" Font-Size="26px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="tbxNo" runat="server" placeholder="作番" Text="" Width="160" Font-Size="26px" AutoCompleteType="Disabled" style="height:50px !important"></asp:TextBox>
                 <%--              
 <input runat ="server"  type="tel"  id="tbxCd" placeholder="商品CD" Text="CHFDEDMAAAAXXJX" Width="300" Font-Size="26px" />
 <input runat ="server" type="tel" id="tbxNo"  placeholder="作番" Text="9006331505" Width="160" Font-Size="26px"  />
@@ -82,7 +84,6 @@
                 <asp:Button ID="btnClear" runat="server" Text="清除" Width="100" />
 
                 <asp:Button ID="btnNewChkNoPlan" runat="server" Text="无计划新规" Width="170" />
-                <asp:Label ID="lblGT" runat="server" Text=""></asp:Label>
             </div>
 
 

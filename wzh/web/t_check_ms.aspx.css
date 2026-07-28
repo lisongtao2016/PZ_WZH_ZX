@@ -20,49 +20,51 @@ html {
 
 body {
     height: 100%;
-    font-family: JetBrainsMono-ExtraBold,Meiryo, sans-serif;
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
     background-color: #fff;
-    /*overflow: hidden;*/
-    /*font-family: JetBrainsMono-ExtraBold;*/
 }
 
 form {
     height: 100%;
 }
 
-header {
-    width: 800px;
-    min-width: 800px;
-    height: 60px;
-    background-color: #b4bece;
-    color: #333;
-    position: fixed;
-    z-index: 999;
-}
-
-
 .jqIn1 {
-    position: relative;
-    float: left;
-    width: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 24px;
+    box-sizing: border-box;
     border: solid 1px #dadada;
     padding: 2px;
-    height:24px;
+    margin: 0;
+    font-size: 20px;
 }
 
 .divBanner {
-    height: 50px;
     float: left;
     width: 796px;
     min-width: 750px;
-    height: 34px;
-    background-color: #095074;
-    color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 1px 2px 5px #bbb;
-    text-shadow: 1px 2px 5px #bbb;
-    border-radius: 10px; /* future proofing */
-    text-align: right;
+    height: 50px;
+    line-height: 50px;
+    background: linear-gradient(135deg, #eef1f5, #d5dae0);
+    color: #333;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.divBanner input,
+.divBanner button,
+.divBanner select {
+    font-size: 20px;
+}
+
+.divBanner span {
+    font-size: 12px;
 }
 
 .top_button_panel {
@@ -263,8 +265,29 @@ input[type="submit"], input[type="button"], input[type="reset"] {
     font-family:'Arial Narrow', Arial, sans-serif;
     font-size:20px;
 }
+/* GridView 标题行 */
+.tbl_ms_title_new {
+    background: linear-gradient(135deg, #00838f, #006064) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    border: 1px solid #00838f !important;
+}
+
+.tbl_ms_title_new th {
+    background: linear-gradient(135deg, #00838f, #006064) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    border: 1px solid #00838f !important;
+    padding: 4px 2px !important;
+}
+
 .chk_div_links{
         word-break: keep-all;
+        line-height: 2.2;
 }
 .chk_div_links a{
     padding-left:4px;

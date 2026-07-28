@@ -1,4 +1,10 @@
-﻿/* ========== 上方三排控件 table 布局 ========== */
+﻿/* ========== article 整体右移 2px ========== */
+article {
+    padding-left: 2px !important;
+    box-sizing: border-box;
+}
+
+/* ========== 上方三排控件 ========== */
 .top_table {
     width: 100%;
     border-collapse: collapse;
@@ -25,7 +31,7 @@
     vertical-align: middle;
 }
 
-/* 正常按钮 */
+/* 正常按钮 — 青色渐变 */
 .top_btn {
     height: 60px;
     width: 100%;
@@ -33,31 +39,29 @@
     box-sizing: border-box;
     line-height: 58px;
     font-weight: 700;
-    font-size: 14px;
-    border: 1px solid #bbb;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 131, 143, 0.25);
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    background: #fff;
-    color: #222;
-    border-left: 4px solid #4a90d9;
+    background: linear-gradient(135deg, #00838f, #006064);
+    color: #fff;
 }
 
 .top_btn:hover {
-    background: #f0f4ff;
-    border-color: #4a90d9;
-    box-shadow: 0 2px 8px rgba(74, 144, 217, 0.20);
+    background: linear-gradient(135deg, #0097a7, #00838f);
+    box-shadow: 0 4px 14px rgba(0, 131, 143, 0.40);
+    transform: translateY(-1px);
 }
 
 .top_btn:active {
     transform: translateY(0);
 }
 
-/* 小按钮（生产实际/不良一览） */
+/* 小按钮（生产实际/不良一览）— 同青色 */
 .top_btn_small {
     height: 60px;
     width: 100%;
@@ -65,38 +69,35 @@
     box-sizing: border-box;
     line-height: 58px;
     font-weight: 700;
-    font-size: 14px;
-    border: 1px solid #bbb;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 131, 143, 0.25);
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    background: #fff;
-    color: #222;
-    border-left: 4px solid #999;
+    background: linear-gradient(135deg, #00838f, #006064);
+    color: #fff;
 }
 
 .top_btn_small:hover {
-    background: #f5f5f5;
-    border-color: #999;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    background: linear-gradient(135deg, #0097a7, #00838f);
+    box-shadow: 0 4px 14px rgba(0, 131, 143, 0.40);
+    transform: translateY(-1px);
 }
 
-/* 禁用状态 */
+/* 禁用状态 — 青色按钮通用 */
 .top_btn:disabled,
 .top_btn_small:disabled,
 .top_btn[disabled],
 .top_btn_small[disabled] {
-    background: #f0f0f0 !important;
-    color: #ccc !important;
-    border: 1px solid #e0e0e0 !important;
-    border-left: 4px solid #e0e0e0 !important;
+    background: #e0e0e0 !important;
+    color: #bbb !important;
+    border: none !important;
     cursor: not-allowed !important;
     box-shadow: none !important;
-    opacity: 0.55;
+    opacity: 0.5;
     pointer-events: none;
 }
 
@@ -106,26 +107,92 @@
     cursor: pointer;
 }
 
+/* ========== top_button_panel 三行容器 ========== */
+.top_button_panel {
+    width: 820px;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    box-sizing: content-box;
+}
+
+/* ========== top_button_panel（flex 布局中的按钮）==== */
+.top_button_panel input[type='button'],
+.top_button_panel input[type='submit'],
+.top_button_panel a,
+.top_button_panel button {
+    margin: 2px 2px;
+    height: 60px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 58px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 131, 143, 0.25);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, #00838f, #006064);
+    color: #fff;
+}
+
+.top_button_panel input[type='button']:hover,
+.top_button_panel input[type='submit']:hover,
+.top_button_panel a:hover,
+.top_button_panel button:hover {
+    background: linear-gradient(135deg, #0097a7, #00838f);
+    box-shadow: 0 4px 14px rgba(0, 131, 143, 0.40);
+    transform: translateY(-1px);
+}
+
+.top_button_panel input[type='button']:active,
+.top_button_panel input[type='submit']:active {
+    transform: translateY(0);
+}
+
+/* 禁用状态 */
+.top_button_panel input[type='button']:disabled,
+.top_button_panel input[type='submit']:disabled,
+.top_button_panel button:disabled,
+.top_button_panel input[type='button'][disabled],
+.top_button_panel input[type='submit'][disabled] {
+    background: #e0e0e0 !important;
+    color: #bbb !important;
+    border: none !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 /* ========== gvtitle ========== */
 .gvtitle {
     border-collapse: collapse;
 }
 
 .gvtitle td {
-    border-left: 1px solid #c8e6c9;
-    border-top: 1px solid #c8e6c9;
-    border-bottom: 1px solid #c8e6c9;
+    border-left: 1px solid #00838f;
+    border-top: 1px solid #00838f;
+    border-bottom: 1px solid #00838f;
     font-weight: 700;
     text-align: center;
-    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-    color: #2e7d32;
+    background: linear-gradient(135deg, #00838f, #006064);
+    color: #fff;
     padding: 2px 0;
     font-size: 13px;
     letter-spacing: 0.5px;
 }
 
 .gvtitle tr td:last-child {
-    border-right: 1px solid #d0d0d0;
+    border-right: 1px solid #00838f;
 }
 
 .gv td {
@@ -203,4 +270,29 @@ header > div:first-child::before {
     font-weight: 600;
     color: #333;
     letter-spacing: 1px;
+}
+
+/* 小按钮（生产实际/不良一览）— 与 top_button_panel 同青色 */
+.btn_small {
+    font-size: 14px !important;
+    height: 60px !important;
+    padding: 0 8px !important;
+    margin-left: 66px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(0, 131, 143, 0.25) !important;
+    background: linear-gradient(135deg, #00838f, #006064) !important;
+    color: #fff !important;
+    line-height: 58px !important;
+}
+
+.btn_small:hover {
+    background: linear-gradient(135deg, #0097a7, #00838f) !important;
+    box-shadow: 0 4px 14px rgba(0, 131, 143, 0.40) !important;
+    transform: translateY(-1px);
+}
+
+.btn_small + .btn_small {
+    margin-left: 4px !important;
 }
