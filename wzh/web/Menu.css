@@ -83,7 +83,7 @@ input.new_menu_button_small {
     display: inline-block;
     width: 300px;
     margin: 4px auto;
-    padding: 10px 12px;
+    padding: 10px 12px 10px 16px;
     font-size: 16px;
     font-weight: 600;
     color: #333;
@@ -96,6 +96,7 @@ input.new_menu_button_small {
     text-decoration: none;
     line-height: 1.4;
     letter-spacing: 1px;
+    border-left: 5px solid #bbb;
 }
 
 .menu_button:hover,
@@ -214,10 +215,58 @@ input.new_menu_button_small:active {
     font-size: 16px;
 }
 
+.sub-box .menu-btn-wrap {
+    width: 100%;
+}
+
+.sub-box .menu-btn-wrap .menu_button,
+.sub-box .menu-btn-wrap input.menu_button {
+    width: auto;
+    min-width: 200px;
+}
+
 /* ========== 链接按钮（a标签） ========== */
 a.menu_button {
     padding: 10px 12px;
     box-sizing: border-box;
+}
+
+/* ========== 按钮+NEW徽标容器 ========== */
+.menu-btn-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 4px auto;
+    width: 300px;
+}
+
+.menu-btn-wrap .menu_button,
+.menu-btn-wrap input.menu_button {
+    margin: 0;
+    width: 268px;
+}
+
+/* 正方形 NEW 徽标（button） */
+.new-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ff6b35, #e65100);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(230, 81, 0, 0.35);
+    border: none;
+    padding: 0;
+    line-height: 1;
+    cursor:pointer;
+    /*cursor: not-allowed;*/
 }
 
 /* ========== 返回按钮特殊样式 ========== */
@@ -263,6 +312,16 @@ a.menu_button {
     .sub-box a.menu_button {
         width: 80%;
         max-width: 300px;
+    }
+
+    .sub-box .menu-btn-wrap {
+        width: 100%;
+    }
+
+    .sub-box .menu-btn-wrap .menu_button,
+    .sub-box .menu-btn-wrap input.menu_button {
+        width: auto;
+        min-width: 200px;
     }
 
     #btnBack {

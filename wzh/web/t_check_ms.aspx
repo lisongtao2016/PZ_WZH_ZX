@@ -270,7 +270,7 @@
                             <ItemTemplate>
                                 <input type="text" class='jqIn1'
                                     value='<%#Eval("in_1").ToString%>'
-                                    style="background-color: <%# PageCom.GetInBgColor(Eval("chk_fs").ToString) %>; width: 200px;" />
+                                    style="background-color: <%# PageCom.GetInBgColor(Eval("chk_fs").ToString) %>;" />
                             </ItemTemplate>
                             <ItemStyle Width="210px" />
                         </asp:TemplateField>

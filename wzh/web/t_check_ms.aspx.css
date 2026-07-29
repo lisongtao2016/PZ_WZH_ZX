@@ -144,22 +144,39 @@ footer {
 
 .imgButton {
     position: fixed;
-    /*bottom: 400px;*/
-    top:620px;
+    top: 618px;
     width: 450px;
     text-align: center;
-    opacity: 0.2;
-    z-index:10000;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
 }
 
     .imgButton input {
-        font-family: JetBrainsMono-ExtraBold,Meiryo, sans-serif;
-        font-size: 30px;
         height: 80px;
         width: 80px;
-        margin: 4px;
-        border-radius: 45px;
-        color: #FFF;
+        margin: 0;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(135deg, #00838f, #006064);
+        box-shadow: 0 2px 8px rgba(0, 131, 143, 0.30);
+        transition: all 0.2s ease;
+        font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+    }
+
+    .imgButton input:hover {
+        background: linear-gradient(135deg, #0097a7, #00838f);
+        box-shadow: 0 4px 12px rgba(0, 131, 143, 0.45);
+        transform: translateY(-2px);
+    }
+
+    .imgButton input:active {
+        transform: translateY(0);
     }
 
 .jqBflMin {
@@ -176,7 +193,7 @@ footer {
     width: 30%;
     min-width: 300px;
     /*background-image: url('image/Scan.jpg');*/
-    height: 410px;
+    height: 460px;
     background-size: 300px 300px;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -198,16 +215,28 @@ footer {
     background-color: #fff;
 }
 
-    .keybd td {
+.keybd td {
         width: 80px;
+        height: 60px;
         text-align: center;
         vertical-align: middle;
-        line-height: 55px;
-        height: 55px;
-        font-size: 40px;
-        box-shadow: 4px 2px 5px #bbb;
-        text-shadow: 2px 2px 5px #bbb;
-        border-radius: 10px; /* future proofing */
+        line-height: 60px;
+        font-size: 36px;
+        font-weight: 700;
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: box-shadow 0.15s ease, transform 0.15s ease;
+        user-select: none;
+    }
+
+    .keybd td:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        filter: brightness(1.05);
+    }
+
+    .keybd td:active {
+        transform: scale(0.96);
     }
 
 

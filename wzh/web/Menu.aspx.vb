@@ -135,9 +135,9 @@ Partial Class Menu
         Server.Transfer("MsSyouhin.aspx")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Server.Transfer("MsCheckMs.aspx")
-    End Sub
+    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    '    Server.Transfer("MsCheckMs.aspx")
+    'End Sub
     Protected Sub btn23_Click(sender As Object, e As EventArgs) Handles btn23.Click
         'If (ViewState("tp_page_kbn") = "3") Then
         '    Context.Items("tp_page_kbn") = "4"
