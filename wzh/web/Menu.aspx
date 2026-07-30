@@ -104,7 +104,7 @@
                     <div class="section-title">检查</div>
                     <hr />
                     <div class="menu-btn-wrap">
-                        <asp:Button ID="btnChkMs" runat="server" Text="检查一览" CssClass="menu_button Orange" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                        <asp:Button ID="btnChkMs" runat="server" Text="检查一览" CssClass="menu_button Orange" /></div>
 
 
 
@@ -112,39 +112,41 @@
                     <hr />
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnMakePlan" runat="server" Text="出力账票前，先执行" CssClass="menu_button light_blue" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnMakePlan" runat="server" Text="出力账票前，先执行" CssClass="menu_button light_blue" /></div>
                     </div>
-                    <br />
+       
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnChkResultList" runat="server" Text="【检查结果明细表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnChkResultList" runat="server" Text="【检查结果明细表】" CssClass="menu_button light_green" />
+                            <input type="button" class="new-badge" value="NEW" title="" onclick="loginView('v_A01_result_list_2026')"/></div>
                     </div>
-                    <br />
+            
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnChkResultListMS" runat="server" Text="【检查明细表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnChkResultListMS" runat="server" Text="【检查明细表】" CssClass="menu_button light_green" />
+                            <input type="button" class="new-badge" value="NEW" onclick="loginView('v_A02_check_result_ms_2026')" /></div>
                     </div>
-                    <br />
-
+           
+                    
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
                             <asp:Button ID="btnMiCheckList" runat="server" Text="【未检查一览】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
                     </div>
-                    <br />
+              
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
                             <asp:Button ID="btnChkResultListEdit" runat="server" Text="【检查结果修正表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
                     </div>
-                    <br />
+            
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
                             <asp:Button ID="btnSCX" runat="server" Text="【生产性表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
                     </div>
-                    <br />
+            
 
                     <asp:Button ID="btn23" runat="server" Text="(2.生产完➡3.待检)" CssClass="menu_button Orange" Visible="false" />
                     <asp:Button ID="btn34" runat="server" Text="(3.待检➡4.检查完了)" CssClass="menu_button Orange" Visible="false" /><br />
