@@ -132,19 +132,27 @@
                     
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnMiCheckList" runat="server" Text="【未检查一览】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnMiCheckList" runat="server" Text="【未检查一览】" CssClass="menu_button light_green" />
+                            
+                            <input type="button" class="new-badge" value="NEW" onclick="loginView('v_A03_mi_check_result_2026')" /></div>
                     </div>
               
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnChkResultListEdit" runat="server" Text="【检查结果修正表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnChkResultListEdit" runat="server" Text="【检查结果修正表】" CssClass="menu_button light_green" />
+                            
+                            
+                            <input type="button" class="new-badge" value="NEW" onclick="loginView('v_A04_result_list_2026')" /></div>
                     </div>
             
 
                     <div class="btn-row">
                         <div class="menu-btn-wrap">
-                            <asp:Button ID="btnSCX" runat="server" Text="【生产性表】" CssClass="menu_button light_green" /><input type="button" class="new-badge" value="NEW" disabled title="未实装" /></div>
+                            <asp:Button ID="btnSCX" runat="server" Text="【生产性表】" CssClass="menu_button light_green" />
+                            
+                            
+                                     <input type="button" class="new-badge" value="NEW" onclick="loginView('v_A05_check_scx_one')" /></div>
                     </div>
             
 
