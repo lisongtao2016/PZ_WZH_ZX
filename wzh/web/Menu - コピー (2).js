@@ -1,24 +1,4 @@
-﻿// iframe 全屏弹出层
-function openInFrame(url) {
-    // 如果已存在则先移除
-    $('#iframeOverlay').remove();
-
-    var overlay = $(
-        '<div id="iframeOverlay">' +
-            '<button id="iframeClose" title="关闭">×</button>' +
-            '<iframe src="' + url + '" frameborder="0"></iframe>' +
-        '</div>'
-    );
-
-    // 点击关闭按钮移除弹出层
-    $('#iframeClose', overlay).on('click', function () {
-        overlay.remove();
-    });
-
-    $('body').append(overlay);
-}
-
-function login(table) {
+﻿function login(table) {
 	var user = $("#UserHeader_lblUserCd").text();
 	var name = $("#UserHeader_lblUserName").text();
 	var db = "wzh_new本番";
@@ -27,7 +7,7 @@ function login(table) {
     if (db && table) {
         params += '&db=' + btoa(encodeURIComponent(db)) + '&table=' + btoa(encodeURIComponent(table));
     }
-    openInFrame('http://10.160.192.131/DBTableKanri/TableMaint.aspx?' + params);
+    window.open( 'http://10.160.192.131/DBTableKanri/TableMaint.aspx?' + params);
 }
 
 function loginView(view) {
@@ -81,6 +61,6 @@ function loginView(view) {
 
     }
 
-	openInFrame('http://10.160.192.131/DBTableKanri/ViewDisplay.aspx?' + params);
+	window.open( 'http://10.160.192.131/DBTableKanri/ViewDisplay.aspx?' + params);
     //window.location.href = 'ViewDisplay.aspx?' + params;
 }

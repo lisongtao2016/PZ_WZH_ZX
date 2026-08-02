@@ -31,13 +31,18 @@
 
         <%-- 変更1: 左上角部品选择面板 --%>
         <div class="top-left-panel">
-            <asp:LinkButton ID="lbSCX" runat="server">查看生产性</asp:LinkButton>
-            <asp:CheckBox ID="cb1" runat="server" Text="1部" Checked="true" />
-            <asp:CheckBox ID="cb2" runat="server" Text="2部" Checked="true" />
-            <asp:CheckBox ID="cb3" runat="server" Text="3部" Checked="true" />
-            <asp:CheckBox ID="cb4" runat="server" Text="4部" Checked="true" />
-            <%-- 変更2: lblGT 移到 4部 右侧 --%>
-            <asp:Label ID="lblGT" runat="server" Text="" style="margin-left:8px;font-weight:700;color:#333;font-size:16px;"></asp:Label>
+            <asp:LinkButton ID="lbSCX" runat="server">生产性</asp:LinkButton>
+            <div class="bubetsu-group">
+                <asp:CheckBox ID="cb1" runat="server" Text="1部" Checked="true" />
+                <asp:CheckBox ID="cb2" runat="server" Text="2部" Checked="true" />
+                <asp:CheckBox ID="cb3" runat="server" Text="3部" Checked="true" />
+                <asp:CheckBox ID="cb4" runat="server" Text="4部" Checked="true" />
+            </div>
+
+            <input type="button" id="btnScsj" class=""  value="实际" />
+            <input type="button" id="btnBuliang" class=""  value="不良" />
+            <asp:Button ID="btnInputByHand" runat="server" Text="手" />
+            <asp:Button ID="btnBack" runat="server" Text="返回" />
         </div>
         <%-- 変更3: UserHeader 标题清空 --%>
         <uc1:Header runat="server" ID="UserHeader" title="" />
@@ -46,11 +51,12 @@
         <article>
             <%-- 変更4: 第一行 移除 float:right div，改用 class --%>
             <div class="top_button_panel">
-                <asp:TextBox ID="tbxTpNo" CssClass="tp_barcode" runat="server" placeholder="托盘CD" Text="" Font-Size="40px" ForeColor="blue" Width="180px" Height="40px"></asp:TextBox>
-                <asp:Button ID="btnTpChkList" runat="server" Text="托盘检查一览" Width="210px" />
-                <input type="button" id="btnClearTp" value="清空" />
-                <input type="button" id="btnScsj" class="btn_small" value="生产实际" />
-                <input type="button" id="btnBuliang" class="btn_small" value="不良一览" />
+                <asp:TextBox ID="tbxTpNo" CssClass="tp_barcode" runat="server" placeholder="托盘CD" Text=""></asp:TextBox>
+                <asp:Button ID="btnTpChkList" runat="server" Text="托盘检查一览" Width="182px" />
+                <input type="button" id="btnClearTp" value="清空" style="width:100px;"/>
+                <%-- 変更2: lblGT 移到 4部 右侧 --%>
+                <asp:Label ID="lblGT" runat="server" Text="" Style="margin-left: 8px; font-weight: 700; color: #333; font-size: 16px;"></asp:Label>
+
             </div>
 
             <%-- 変更5: 第二行 tbxCd / tbxNo 强制高度 60px + 删除 lblGT --%>
@@ -59,34 +65,35 @@
                 <%-- CHADDLWKKABTAXX 9006160969 --%>
                 <%-- CHFDEDMAAAAXXJX 9006331505 --%>
                 <%--CHADDLW3A1BTAXX 9006160965--%>
-                <asp:TextBox ID="tbxCd" runat="server" placeholder="商品CD" Text="" Width="300" Font-Size="26px" AutoCompleteType="Disabled" style="height:50px !important"></asp:TextBox>
+                <asp:TextBox ID="tbxCd" runat="server" placeholder="商品CD" Text="" Width="300" Font-Size="26px" AutoCompleteType="Disabled" Style="height: 50px !important"></asp:TextBox>
 
-                <asp:TextBox ID="tbxNo" runat="server" placeholder="作番" Text="" Width="160" Font-Size="26px" AutoCompleteType="Disabled" style="height:50px !important"></asp:TextBox>
+                <asp:TextBox ID="tbxNo" runat="server" placeholder="作番" Text="" Width="180" Font-Size="26px" AutoCompleteType="Disabled" Style="height: 50px !important;text-align:center;"></asp:TextBox>
                 <%--              
 <input runat ="server"  type="tel"  id="tbxCd" placeholder="商品CD" Text="CHFDEDMAAAAXXJX" Width="300" Font-Size="26px" />
 <input runat ="server" type="tel" id="tbxNo"  placeholder="作番" Text="9006331505" Width="160" Font-Size="26px"  />
                 --%>
 
-                <asp:DropDownList ID="ddlHiinai" runat="server" Width="100px" Style="font-size: 26px;">
+                <asp:DropDownList ID="ddlHiinai" runat="server" Width="100px" Style="font-size: 24px;">
                 </asp:DropDownList>
                 日
-                <asp:Button ID="btnSel" runat="server" Text="检索" />
-                <asp:Button ID="btnBack" runat="server" Text="返回" />
-                <hr />
-                <asp:Button ID="btnNewChk" runat="server" Text="新规" Width="100" />
-                <asp:Button ID="btnSetDefault" runat="server" Text="默认" Width="100" />
+                <asp:Button ID="btnSel" runat="server" Text="检索" Width="80" />
+                           <asp:Button ID="btnClear" runat="server" Text="清除" Width="80" />
 
-                <asp:Button ID="btnReChk" runat="server" Text="NG再检" Width="140" />
+            </div>
+                       <div class="top_button_panel">
+                <asp:Button ID="btnNewChk" runat="server" Text="新规" Width="146" />
+                <asp:Button ID="btnSetDefault" runat="server" Text="默认" Width="146" />
+
+                <asp:Button ID="btnReChk" runat="server" Text="NG再检" Width="185" />
 
 
                 <%--                <asp:Button ID="btnContinue" runat="server" Text="继续检查"  Width="150"/>--%>
-                <asp:Button ID="btnInputByHand" runat="server" Text="手入力" Width="120" />
-                <asp:Button ID="btnClear" runat="server" Text="清除" Width="100" />
 
-                <asp:Button ID="btnNewChkNoPlan" runat="server" Text="无计划新规" Width="170" />
+     
+
+                <asp:Button ID="btnNewChkNoPlan" runat="server" Text="无计划新规" Width="160" style="margin-left:0px" />
+
             </div>
-
-
             <asp:Panel ID="PanelZen" runat="server" Height="400px" CssClass="PGvZen">
                 &nbsp;&nbsp;&nbsp;
                 <a style="font-size: 40px; color: red;">以下 前回～ NG</a>&nbsp;&nbsp;&nbsp;<input type="button" value=" 关闭 " onclick="$('#PanelZen').hide();" />
@@ -147,7 +154,7 @@
                 </asp:GridView>
             </asp:Panel>
 
-            <table class="gvtitle" cellspacing="0" style="width: 820px;">
+            <table class="gvtitle" cellspacing="0" style="width: 830px;">
                 <tr class="">
                     <td style="width: 160px">ID<br />
                         作番
@@ -174,7 +181,7 @@
                 </tr>
             </table>
             <div style="width: 840px; overflow: auto; height: 1000px;">
-                <asp:GridView ID="gvLastCheckResultMS" runat="server" AutoGenerateColumns="False" Width="820px" CssClass="gv" ShowHeader="false">
+                <asp:GridView ID="gvLastCheckResultMS" runat="server" AutoGenerateColumns="False" Width="830px" CssClass="gv" ShowHeader="false">
                     <Columns>
                         <asp:TemplateField HeaderText="ID<br />作番">
                             <ItemTemplate>
