@@ -71,6 +71,8 @@ input[type='reset'] {
     border: 1px solid #ccc;
     box-sizing: border-box;
     vertical-align:top;
+    transition: min-height 0.2s ease, padding 0.2s ease, border-color 0.2s ease;
+    vertical-align:top;
 }
 
     /* ========== top_button_panel 按钮（直角、大尺寸触摸友好） ========== */
@@ -84,20 +86,40 @@ input[type='reset'] {
         font-size: 22px;
         border: 1px solid #999;
         cursor: pointer;
-
         text-align: center;
         text-decoration: none;
         background: #e8e8e8;
         color: #333;
         touch-action: manipulation;
+        transition: height 0.2s ease, font-size 0.2s ease;
     }
 
-        .top_button_panel input[type='button']:hover,
+    /* 行内元素获得焦点时：整行高度加倍 */
+    .top_button_panel:focus-within {
+        min-height: 104px;
+
+        border-color: #ff8f00;
+    }
+
+
+
+    .top_button_panel:focus-within input[type='button']:focus,
+    .top_button_panel:focus-within input[type='submit']:focus,
+    .top_button_panel:focus-within a:focus,
+    .top_button_panel:focus-within button:focus {
+        outline: 3px solid #ff8f00;
+        outline-offset: 2px;
+        filter: brightness(1.15);
+
+    }
+
+        /*.top_button_panel input[type='button']:hover,
         .top_button_panel input[type='submit']:hover,
         .top_button_panel a:hover,
         .top_button_panel button:hover {
             filter: brightness(1.1);
-        }
+                            min-height: 204px;
+        }*/
 
         /* 禁用状态 */
         .top_button_panel input[type='button']:disabled,
@@ -318,7 +340,7 @@ header > div:first-child::before {
     white-space: nowrap;
 }
 
-/* ========== 部别多选（按钮组，4个贴紧共享边框） ========== */
+/* ========== 部别多选（按钮组） ========== */
 .bubetsu-group {
     display: inline-flex;
     align-items: center;
