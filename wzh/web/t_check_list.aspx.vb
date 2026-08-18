@@ -44,9 +44,11 @@ Partial Class t_check_list
             End If
 
             If CLoginInfo.authority = "1" Then
-                Me.btnBack.Enabled = True
+                Me.btnBack.Visible = True
+                Me.btnBack2.Visible = False
             Else
-                Me.btnBack.Enabled = False
+                Me.btnBack.Visible = False
+                Me.btnBack2.Visible = True
             End If
             Me.tbxCd.Text = ""
             Me.tbxNo.Text = ""
@@ -826,4 +828,7 @@ Partial Class t_check_list
 
     End Sub
 
+    Protected Sub btnBack2_Click(sender As Object, e As EventArgs) Handles btnBack2.Click
+        Server.Transfer("default.aspx")
+    End Sub
 End Class

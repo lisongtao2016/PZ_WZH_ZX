@@ -43,6 +43,7 @@
             <input type="button" id="btnBuliang" class=""  value="不良" />
             <asp:Button ID="btnInputByHand" runat="server" Text="手" />
             <asp:Button ID="btnBack" runat="server" Text="返回" />
+             <asp:Button ID="btnBack2" runat="server" Text="返回" />
         </div>
         <%-- 変更3: UserHeader 标题清空 --%>
         <uc1:Header runat="server" ID="UserHeader" title="" />
